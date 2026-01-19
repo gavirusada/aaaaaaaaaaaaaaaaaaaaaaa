@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Sinhala:wght@600;800&display=swap');
+
+body{
+  margin:0;
+  background:transparent;
+  overflow:hidden;
+}
+
+#lowerThird{
+  position:absolute;
+  bottom:8%;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  align-items:center;
+  padding:18px 40px;
+  background:linear-gradient(180deg,#3b240b,#1a0e04);
+  border:3px solid #d4af37;
+  border-radius:16px;
+  box-shadow:0 0 30px rgba(212,175,55,.6);
+  opacity:0;
+}
+
+#lowerThird.show{animation:inAnim 1.5s ease forwards;}
+#lowerThird.hide{animation:outAnim 1s ease forwards;}
+
+@keyframes inAnim{
+  from{opacity:0; transform:translate(-50%,40px);}
+  to{opacity:1; transform:translate(-50%,0);}
+}
+
+@keyframes outAnim{
+  from{opacity:1;}
+  to{opacity:0; transform:translate(-50%,40px);}
+}
+
+.text-area{
+  text-align:center;
+  font-family:'Noto Serif Sinhala',serif;
+}
+
+#programText{
+  font-size:34px;
+  font-weight:800;
+  background:linear-gradient(90deg,#ffd700,#fff3b0,#d4af37);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-shadow:0 0 12px rgba(255,215,0,.9);
+}
+
+#classText{
+  font-size:20px;
+  color:#f3d98b;
+  margin-top:4px;
+}
+
+.ornament{
+  width:55px;
+  height:55px;
+  background:radial-gradient(circle,#d4af37,#7a5316);
+  border-radius:50%;
+}
+
+.left{margin-right:20px;}
+.right{margin-left:20px;}
+
+.light{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent,rgba(255,215,150,.35),transparent);
+  animation:sweep 3s infinite;
+}
+
+@keyframes sweep{
+  0%{transform:translateX(-100%);}
+  60%{transform:translateX(100%);}
+  100%{transform:translateX(100%);}
+}

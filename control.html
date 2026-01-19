@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8">
+<title>Lower Third Control Panel</title>
+<style>
+body{
+  font-family: Arial, sans-serif;
+  background:#111;
+  color:#fff;
+  padding:20px;
+}
+input,button{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+  font-size:16px;
+}
+button{
+  background:#d4af37;
+  border:none;
+  cursor:pointer;
+}
+.out{background:#a33;}
+</style>
+</head>
+<body>
+<h2>Lower Third Control Panel</h2>
+
+<label>Program Name</label>
+<input id="program" placeholder="5න් 6ට යන පුංචි හපන්නු">
+
+<label>Class / Group</label>
+<input id="class" placeholder="ධර්ම පාසල් පංතිය">
+
+<button onclick="animateIn()">Update & Animate IN</button>
+<button class="out" onclick="animateOut()">Animate OUT</button>
+
+<script>
+function animateIn(){
+  localStorage.setItem("lt_program", document.getElementById("program").value);
+  localStorage.setItem("lt_class", document.getElementById("class").value);
+  localStorage.setItem("lt_action", "in");
+}
+
+function animateOut(){
+  localStorage.setItem("lt_action", "out");
+}
+</script>
+</body>
+</html>
